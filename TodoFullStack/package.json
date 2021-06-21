@@ -4,9 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "devStart": "nodemon app.js",
     "front": "npm start --prefix client",
-    "all": "npm run devStart & (cd .. && cd client && npm start)"
+    "all": "npm run devStart & (`cd client && npm start)",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
